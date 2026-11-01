@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
     <Description>A cross-platform memory efficient serialization library</Description>
     <PackageVersion>25.12.19</PackageVersion>
     <Authors>Google LLC</Authors>
@@ -17,6 +17,8 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>flatbuffers.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
+    <UNSAFE_BYTEBUFFER>true</UNSAFE_BYTEBUFFER>
+    <ENABLE_SPAN_T>true</ENABLE_SPAN_T>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(UNSAFE_BYTEBUFFER)' == 'true'">
@@ -31,7 +33,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.403" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
